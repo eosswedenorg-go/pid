@@ -13,17 +13,10 @@ func Get() (int) {
 
 func Save(path string) (error) {
 
-    fd, err := os.Create(path)
+    err := ioutil.WriteFile(path, []byte(strconv.Itoa(Get())), 0644)
     if err != nil {
         return err
     }
-
-    _, err = fd.WriteString(strconv.Itoa(Get()))
-
-    if err != nil {
-        return err
-    }
-
     return nil
 }
 
