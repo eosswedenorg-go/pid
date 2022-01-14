@@ -22,6 +22,12 @@ func Save(path string) (error)
 
 Saves the process id of the caller to `path` on disk.
 
+```go
+func Read(path string) (int, error)
+```
+
+Reads the process id stored in `path` on disk.
+
 ### Author
 
 Henrik Hautakoski - [Sw/eden](https://eossweden.org/) - [henrik@eossweden.org](mailto:henrik@eossweden.org)

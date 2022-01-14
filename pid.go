@@ -3,6 +3,7 @@ package pid
 
 import (
     "os"
+    "io/ioutil"
     "strconv"
 )
 
@@ -24,4 +25,18 @@ func Save(path string) (error) {
     }
 
     return nil
+}
+
+func Read(path string) (int, error) {
+
+    data, err := ioutil.ReadFile(path)
+    if err != nil {
+        return -1, err
+    }
+
+    pid, err := strconv.Atoi(string(data))
+    if err != nil {
+        return -1, err
+    }
+    return pid, nil
 }
