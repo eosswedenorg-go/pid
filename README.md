@@ -10,13 +10,13 @@ go get -u github.com/eosswedenorg-go/pid@latest
 
 ### Functions
 
-```c
+```go
 func Get() (int)
 ```
 
 Returns the process id of the caller.
 
-```c
+```go
 func Save(path string) (error)
 ```
 
